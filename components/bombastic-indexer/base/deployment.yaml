@@ -30,7 +30,7 @@ spec:
           value: "true"
         - name: RUST_LOG
           value: info
-        image: image
+        image: quay.io/redhat-user-workloads/ulilleen-tenant/trustification/bombastic-indexer@sha256:a4337e68aaa6483f335404ef274f0318e22003cfc49fa9a4af19ede4db0bf6bb
         imagePullPolicy: Always
         name: container-image
         ports:
