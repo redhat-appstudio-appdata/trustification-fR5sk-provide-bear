@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: bombastic-indexer
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: bombastic-indexer
+    app.kubernetes.io/part-of: trustification
+  name: bombastic-indexer
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: bombastic-indexer
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: bombastic-indexer
+    spec:
+      containers:
+      - env:
+        - name: REGION
+          value: eu-west-1
+        - name: INFRASTRUCTURE_ENABLED
+          value: "true"
+        - name: RUST_LOG
+          value: info
+        image: image
+        imagePullPolicy: Always
+        name: container-image
+        ports:
+        - containerPort: 9010
+        resources:
+          requests:
+            cpu: 10m
+            memory: 256Mi
+status: {}

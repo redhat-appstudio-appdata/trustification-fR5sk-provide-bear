@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: bombastic-indexer
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: bombastic-indexer
+    app.kubernetes.io/part-of: trustification
+  name: bombastic-indexer
+spec:
+  ports:
+  - port: 9010
+    targetPort: 9010
+  selector:
+    app.kubernetes.io/instance: bombastic-indexer
+status:
+  loadBalancer: {}
