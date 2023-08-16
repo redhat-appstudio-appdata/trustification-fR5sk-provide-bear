@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: bombastic-indexer
+spec:
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-user-workloads/ulilleen-tenant/trustification/bombastic-indexer@sha256:a4337e68aaa6483f335404ef274f0318e22003cfc49fa9a4af19ede4db0bf6bb
+        name: container-image
+        resources: {}
+status: {}
